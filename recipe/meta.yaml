@@ -24,10 +24,10 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
-    - qt6-main          # was: qt-main
+    - qt6-main
     - openssl
   run:
-    - qt6-main          # was: qt-main
+    - qt6-main
     - openssl
 
 # Pass to cmake via the recipe's build script or via extra cmake args:
@@ -38,7 +38,7 @@ test:
   commands:
     - test -f ${PREFIX}/lib/libqca-qt6.so  # [linux]
     - test -d ${PREFIX}/lib/qca-qt6.framework  # [osx]
-    - if not exist %LIBRARY_BIN%\\qca-qt6.dll exit 1 # [win]
+    - if not exist %LIBRARY_BIN%\\qca-qt6.dll exit 1  # [win]
     - qcatool-qt6 --noprompt --newpass= key make rsa 2048 test.key  # [unix]
     - qcatool-qt6.exe --noprompt --newpass= key make rsa 2048 test.key  # [win]
 
