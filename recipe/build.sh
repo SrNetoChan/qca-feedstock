@@ -9,7 +9,7 @@ cmake ${CMAKE_ARGS} \
     -G Ninja \
     -D CMAKE_INSTALL_PREFIX=${PREFIX} \
     -D USE_RELATIVE_PATHS=FALSE \
-    -D QCA_PLUGINS_INSTALL_DIR=${PREFIX}/plugins \
+    -D QCA_PLUGINS_INSTALL_DIR=${PREFIX}/lib/qt6/plugins \
     -D CMAKE_PREFIX_PATH=${PREFIX} \
     -D CMAKE_BUILD_TYPE=Release \
     -D BUILD_WITH_QT6=ON \

@@ -6,7 +6,7 @@ cd build
 :: Need to put "qca" plugin -- including qca-ossl -- in that folder
 cmake -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
     -DUSE_RELATIVE_PATHS=FALSE ^
-    -DQCA_PLUGINS_INSTALL_DIR=%LIBRARY_PREFIX%/plugins ^
+    -DQCA_PLUGINS_INSTALL_DIR=%LIBRARY_PREFIX%/lib/qt6/plugins ^
     -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
     -G "Ninja" ^
     -DCMAKE_BUILD_TYPE=Release ^
