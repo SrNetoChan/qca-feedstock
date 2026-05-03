@@ -6,13 +6,16 @@ cd build/
 # "default" channel "qt" creates "plugins" in root of environment
 # Need to put "qca" plugin -- including qca-ossl -- in that folder
 cmake ${CMAKE_ARGS} \
+    -G Ninja \
     -D CMAKE_INSTALL_PREFIX=${PREFIX} \
     -D USE_RELATIVE_PATHS=FALSE \
     -D QCA_PLUGINS_INSTALL_DIR=${PREFIX}/plugins \
     -D CMAKE_PREFIX_PATH=${PREFIX} \
     -D CMAKE_BUILD_TYPE=Release \
+    -D BUILD_WITH_QT6=ON \
+    -D QCA_SUFFIX=qt6 \
     ${SRC_DIR}
 
-make -j${CPU_COUNT}
+ninja -j${CPU_COUNT}
 # No make check
-make install
+ninja install

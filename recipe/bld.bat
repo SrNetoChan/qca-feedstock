@@ -8,14 +8,16 @@ cmake -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
     -DUSE_RELATIVE_PATHS=FALSE ^
     -DQCA_PLUGINS_INSTALL_DIR=%LIBRARY_PREFIX%/plugins ^
     -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
-    -G "NMake Makefiles" ^
+    -G "Ninja" ^
     -DCMAKE_BUILD_TYPE=Release ^
     -DHAVE_OPENSSL_SHA0=False ^
+    -DBUILD_WITH_QT6=ON ^
+    -DQCA_SUFFIX=qt6 ^
     ..
 if errorlevel 1 exit /B 1
 
-nmake
+ninja
 if errorlevel 1 exit /B 1
 :: No make check
-nmake install
+ninja install
 if errorlevel 1 exit /B 1
