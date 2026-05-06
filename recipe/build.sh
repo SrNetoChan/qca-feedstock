@@ -14,7 +14,7 @@ cmake ${CMAKE_ARGS} \
     -D CMAKE_BUILD_TYPE=Release \
     -D BUILD_WITH_QT6=ON \
     -D QCA_SUFFIX=qt6 \
-    ${SRC_DIR} || (cat CMakeFiles/CMakeError.log; false)
+    ${SRC_DIR} || (cat CMakeFiles/CMakeConfigureLog.yaml; false)
 
 ninja -j${CPU_COUNT}
 # No make check
